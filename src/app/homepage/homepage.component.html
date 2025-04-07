@@ -1,0 +1,52 @@
+<div>
+  <h1>Competitors</h1>
+  <table class='comp-table'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Country</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Total Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (competitor of competitors; track $index) {
+        <tr>
+          <td>{{ competitor.name }}</td>
+          <td>{{ competitor.age }}</td>
+          <td>{{ competitor.country }}</td>
+          <td>{{ competitor.height }}</td>
+          <td>{{ competitor.weight }}</td>
+          <td>{{ competitor.totalPoints }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<div class="results-container">
+  <div class="admin-manage-table">
+    <h1>Results</h1>
+    <table class='comp-table'>
+      <thead>
+      <tr>
+        <th>Event Name</th>
+        <th>Result</th>
+        <th>Points</th>
+        <th>Year</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (result of results; track $index) {
+          <tr>
+            <td>{{ result.eventName}}</td>
+            <td>{{ result.result }}</td>
+            <td>{{ result.points }}</td>
+            <td>{{ result.year }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

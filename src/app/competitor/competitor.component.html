@@ -1,0 +1,66 @@
+<button mat-button routerLink="/admin/manage-results">Results</button>
+<div class="results-container">
+  <div class="admin-manage-table">
+    <h1>Competitors</h1>
+    <table class='comp-table'>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Country</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Total Points</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (competitor of competitors; track $index) {
+          <tr>
+            <td>{{ competitor.id }}</td>
+            <td>{{ competitor.name }}</td>
+            <td>{{ competitor.age }}</td>
+            <td>{{ competitor.country }}</td>
+            <td>{{ competitor.height }}</td>
+            <td>{{ competitor.weight }}</td>
+            <td>{{ competitor.totalPoints }}</td>
+            <td>
+              <button mat-icon-button color="warn" aria-label="Delete" matTooltip="Delete result" (click)="deleteCompetitor(competitor.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  <div class="add-container">
+    <h2 class="add-title">Competitor</h2>
+    <form (ngSubmit)="submitCompetitor()">
+    <div class="add-form">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="string" [(ngModel)]="name" name="Name">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput type="number" [(ngModel)]="age" name="Age">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <input matInput type="string" [(ngModel)]="country" name="Country">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Height</mat-label>
+        <input matInput type="number" [(ngModel)]="height" name="Height">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Weight</mat-label>
+        <input matInput type="number" [(ngModel)]="weight" name="Weight">
+      </mat-form-field>
+    </div>
+    <button mat-flat-button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

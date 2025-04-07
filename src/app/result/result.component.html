@@ -1,0 +1,60 @@
+<button mat-button routerLink="/admin/manage-competitors">Competitors</button>
+<div class="results-container">
+  <div class="admin-manage-table">
+    <h1>Results</h1>
+    <table class='comp-table'>
+      <thead>
+      <tr>
+        <th class="tableHeaderSize">CompetitorID</th>
+        <th>Event Name</th>
+        <th>Result</th>
+        <th>Points</th>
+        <th>Year</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (result of results; track $index) {
+          <tr>
+            <td>{{ result.competitorId}}</td>
+            <td>{{ result.eventName}}</td>
+            <td>{{ result.result }}</td>
+            <td>{{ result.points }}</td>
+            <td>{{ result.year }}</td>
+            <td>
+              <button mat-icon-button color="warn" aria-label="Delete" matTooltip="Delete result" (click)="deleteResult(result.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+    <div class="add-container">
+    <h2 class="add-title">Result</h2>
+    <form (ngSubmit)="submitResult()">
+      <div class="add-form">
+        <mat-form-field>
+          <mat-label>Competitor</mat-label>
+            <input matInput type="string" [(ngModel)]="competitorId" name="competitor_Id">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Event</mat-label>
+            <mat-select type="string" [(ngModel)]="eventName" name="event">
+              @for (event of events; track $index) {
+                <mat-option [value]="event">
+                  {{ event }}
+                </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Result</mat-label>
+            <input matInput type="number" max="220" [(ngModel)]="result" name="result">
+          </mat-form-field>
+        </div>
+      <button mat-flat-button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
