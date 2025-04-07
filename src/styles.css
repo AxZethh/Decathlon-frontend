@@ -1,1 +1,138 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: linear-gradient(145deg, #000000, rgba(1, 37, 66, 0.96), rgba(1, 35, 62, 0.91));
+  color: #00d3ff;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+th, td {
+  border: solid #000000 2px;
+  color: #ffffff;
+  font-weight: bold;
+  border-top: none;
+  border-left: none;
+}
+
+th {
+  font-size: 22px;
+}
+
+.add-container {
+  background: linear-gradient(135deg, #0055A4, #002F6C);
+  color: rgba(228, 209, 4, 0.89);
+  padding: 2rem;
+  border-radius: 10px;
+  border: solid black;
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
+  max-height: 500px;
+  max-width: 400px;
+  margin-top: 81px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  height: fit-content;
+}
+.add-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  outline: black;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px black;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.add-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  margin: auto;
+  gap: 0.2rem;
+}
+
+.comp-table {
+  background: linear-gradient(135deg, #0055A4, #002F6C);
+  padding: 2rem;
+  border-radius: 10px;
+  border: solid #000000;
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
+  max-width: 1000px;
+  min-width: 100%;
+  min-height: 300px;
+  font-size: large;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  width: fit-content;
+  height: fit-content;
+
+}
+.results-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-right: 4px;
+}
+
+.admin-manage-table {
+  flex: 1;
+  margin-left: 4px;
+}
+
+.add-container {
+  flex: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #02157d;
+  text-shadow: #023a7f -2px -1px 5px;
+  cursor: pointer;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.mat-toolbar {
+  padding: 0 16px;
+  --mat-toolbar-container-background-color: linear-gradient(145deg, rgba(99, 163, 216, 0.91), rgba(196, 202, 200, 0.89), rgba(99, 163, 216, 0.91));
+}
+
+.menu-button {
+  font-size: 24px;
+}
+
+button {
+  color: #002F6CFF;
+}
+mat-divider {
+  --mat-divider-color: #0055A4FF;
+  --mat-divider-width: 5px;
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
+}
+mat-menu {
+  color: #000000;
+}
+.tableHeaderSize {
+  width: 8%;
+}
